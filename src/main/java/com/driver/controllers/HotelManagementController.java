@@ -4,6 +4,7 @@ import com.driver.model.Booking;
 import com.driver.model.Facility;
 import com.driver.model.Hotel;
 import com.driver.model.User;
+import com.driver.repository.HotelManagementRepository;
 import com.driver.services.HotelManagementService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,10 +24,8 @@ import java.util.UUID;
 @RequestMapping("/hotel")
 public class HotelManagementController {
 
-    private HotelManagementService hotelManagementService;
-    public HotelManagementController(HotelManagementService hotelManagementService) {
-        this.hotelManagementService = hotelManagementService;
-    }
+    private HotelManagementService hotelManagementService = new HotelManagementService();
+
 
     @PostMapping("/add-hotel")
     public String addHotel(@RequestBody Hotel hotel){

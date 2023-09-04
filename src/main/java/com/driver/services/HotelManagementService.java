@@ -5,7 +5,6 @@ import com.driver.model.Facility;
 import com.driver.model.Hotel;
 import com.driver.model.User;
 import com.driver.repository.HotelManagementRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,11 +13,8 @@ import java.util.Optional;
 @Service
 public class HotelManagementService {
 
-    private HotelManagementRepository hotelManagementRepository;
+    private HotelManagementRepository hotelManagementRepository = new HotelManagementRepository();
 
-    public HotelManagementService(HotelManagementRepository hotelManagementRepository) {
-        this.hotelManagementRepository = hotelManagementRepository;
-    }
 
     public String addHotel(Hotel hotel) {
         if (hotel == null || (hotel.getHotelName() == null)) {
