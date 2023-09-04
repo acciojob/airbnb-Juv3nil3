@@ -13,8 +13,12 @@ import java.util.Optional;
 
 @Service
 public class HotelManagementService {
-    @Autowired
-    HotelManagementRepository hotelManagementRepository;
+
+    private HotelManagementRepository hotelManagementRepository;
+
+    public HotelManagementService(HotelManagementRepository hotelManagementRepository) {
+        this.hotelManagementRepository = hotelManagementRepository;
+    }
 
     public String addHotel(Hotel hotel) {
         if (hotel == null || (hotel.getHotelName() == null)) {

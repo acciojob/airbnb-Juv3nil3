@@ -8,8 +8,10 @@ import org.springframework.stereotype.Repository;
 import java.util.*;
 import java.util.stream.Collectors;
 
-@Repository
+
 public class HotelManagementRepository {
+
+
     private Map<String, Hotel> hotelDb = new HashMap<>();
     private Map<Integer, User> userDb = new HashMap<>();
     private Map<String, Booking> bookingDb = new HashMap<>();
